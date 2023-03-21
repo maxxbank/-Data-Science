@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Прогнозирование модуля упругости при растяжении KNeighbors Regressor</title>
+</head>
+
+<style>
+
+header {
+    margin: auto;
+    width: 50%;
+}
+
+</style>
+
+
+<body>
+    <header>
+    <h3>Прогнозирование модуля упругости при растяжении KNeighbors Regressor</h3>
+    </header>
+
+    <form action="" method="post">
+ 
+            <legend>Введите значения параметров</legend>
+    <p>
+            <label for="mn">Соотношение матрица-наполнитель, МПа [0...6]</label>
+	    <input type="text" name="mn" required>
+    </p><p>
+	    <label for="plot">Плотность, кг/м3 [1700...2300]</label>
+	    <input type="text" name="plot" required>
+    </p><p>
+	    <label for="mup">Модуль упругости, ГПа [2...2000]</label>
+	    <input type="text" name="mup" required>
+    </p><p>
+	    <label for="ko">Количество отвердителя, м.% [17...200]</label>
+	    <input type="text" name="ko" required>
+    </p><p>
+            <label for="seg">Содержание эпоксидных групп,%_2 [14...34]</label>
+	    <input type="text" name="seg" required>
+    </p><p>
+            <label for="tv">Температура вспышки, С_2 [100...414]</label>
+	    <input type="text" name="tv" required>
+    </p><p>
+            <label for="pp">Поверхностная плотность, г/м2 [0.6...1400]</label>
+	    <input type="text" name="pp" required>
+    </p><p>
+            <label for="pr">Прочность при растяжении, МПа [1036...3849]</label>
+	    <input type="text" name="pr" required>
+    </p><p>
+            <label for="ps">Потребление смолы, г/м2 [33...414]</label>
+	    <input type="text" name="ps" required>
+    </p><p>
+            <label for="yn">Угол нашивки, град [0 или 1]</label>
+	    <input type="number" name="yn" required>
+    </p><p>
+            <label for="shn">Шаг нашивки [0...15]</label>
+	    <input type="text" name="shn" required>
+    </p><p>
+            <label for="pln">Плотность нашивки [0...104]</label>
+	    <input type="text" name="pln" required>
+	</p>
+ 	<p>
+	    <input type="submit" value="Рассчитать">
+	</p>
+    </form>
+    <p>
+    {% if message %}
+        <p><b>{{message}}</b></p>
+    {% endif %}
+    </p>
+</body>
+<footer>
+    <p>
+        <a href="{{url_for('select_model')}}"><button>Вернуться к выбору моделей</button></a>
+    </p>
+</footer>
+</html>
